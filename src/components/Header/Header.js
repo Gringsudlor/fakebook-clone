@@ -7,6 +7,7 @@ import DropdownMenu from './DropdownMenu/DropdownMenu';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import FlagIcon from '@material-ui/icons/Flag';
+import { Games } from '@material-ui/icons';
 import SubscriptionsOutlinedIcon from '@material-ui/icons/SubscriptionsOutlined';
 import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
@@ -46,17 +47,10 @@ const Header = () => {
                     <HomeIcon fontSize="large" />
                 </div>
                 <div className="headerOption">
-                    <FlagIcon fontSize="large" />
+                    <Games fontSize="large" />                
                 </div>
-                <div className="headerOption">
-                    <SubscriptionsOutlinedIcon fontSize="large" />
-                </div>
-                <div className="headerOption">
-                    <StorefrontOutlinedIcon fontSize="large" />
-                </div>
-                <div className="headerOption">
-                    <SupervisedUserCircleIcon fontSize="large" />
-                </div>
+                
+             
             </div>
             
             <div className="headerRight">
