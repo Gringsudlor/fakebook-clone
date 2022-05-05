@@ -5,7 +5,7 @@ import './Feed.css';
 import StoryReel from './StoryReel/StoryReel';
 import MessageSender from './MessageSender/MessageSender';
 import Post from './Post/Post';
-
+import MessageSender2 from '../Sidebar/MessageSender2/MessageSender2';
 
 // database
 import db from '../../firebase'
@@ -30,6 +30,7 @@ const Feed = () => {
         <div className="feed">
             <StoryReel />
             <MessageSender />
+            <MessageSender2 />
             
             {
                 posts.map(post => (

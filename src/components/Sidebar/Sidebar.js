@@ -20,11 +20,14 @@ import {
 
 const Sidebar = () => {
     const [{ user }, dispatch] = useStateValue();
+    const handleSubmit = (e) => {
+       // e.preventDefault();
+    }
 
     return (
         <div className="sidebar">
             <SidebarRow src={user.photoURL} title={user.displayName} />
-            
+        
         </div>
     )
 }

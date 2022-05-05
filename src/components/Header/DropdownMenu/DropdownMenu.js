@@ -71,32 +71,7 @@ const DropdownMenu = () => {
                 {/* <DropdownItem>My Profile</DropdownItem> */}
                 <DropdownItemImage image={user.photoURL}>{user.displayName}</DropdownItemImage>
 
-                <hr className="hrTag" />
-                <DropdownItem
-                    leftIcon={<FeedbackIcon />}
-                >Give Feedback</DropdownItem>
-                <hr className="hrTag" />
-
-                <DropdownItem
-                    leftIcon={<CogIcon />}
-                    rightIcon={<ChevronIcon />}
-                    goToMenu="settings"
-                >Settings & Privacy</DropdownItem>
-
-                <DropdownItem
-                    leftIcon={<HelpIcon/>}
-                    rightIcon={<ChevronIcon />}
-                    goToMenu="help"
-                >Help & Support</DropdownItem>
-
-                <DropdownItem
-                    leftIcon={<Brightness2Icon />}
-                >Dark Mode</DropdownItem>
-
-                <DropdownItem
-                    leftIcon={<ArrowIcon />}
-                >Switch to Classic Facebook</DropdownItem>
-
+          
                 <DropdownItem
                     leftIcon={<ExitToAppIcon />}
                 >Log Out</DropdownItem>
