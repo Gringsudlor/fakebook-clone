@@ -1,5 +1,3 @@
-This is a ReactJs site for learning purpose.
-
 ## A simple ReactJs site 
 - This is a clone app of facebook
 - Need to login first by google to see or add post
