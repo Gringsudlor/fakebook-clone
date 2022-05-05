@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import { ReactComponent as CogIcon } from '../../../img/icons/cog.svg';
 import { ReactComponent as ChevronIcon } from '../../../img/icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../../img/icons/arrow.svg';
+import { Button } from '@material-ui/core';
 
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import HelpIcon from '@material-ui/icons/Help';
@@ -20,6 +21,7 @@ import ReportIcon from '@material-ui/icons/Report';
 
 // context api
 import { useStateValue } from '../../../state/Provider'
+import { signOut } from 'firebase/auth';
 
 const DropdownMenu = () => {
     const [{ user }, dispatch] = useStateValue();
@@ -72,9 +74,11 @@ const DropdownMenu = () => {
                 <DropdownItemImage image={user.photoURL}>{user.displayName}</DropdownItemImage>
 
           
-                <DropdownItem
-                    leftIcon={<ExitToAppIcon />}
-                >Log Out</DropdownItem>
+                <DropdownItem leftIcon={<ExitToAppIcon />}>
+                 <Button type="submit" onClick={signOut}></Button>Logout</DropdownItem>
+             
+                
+                
 
                 {/* <DropdownItem
                     leftIcon="🦧"

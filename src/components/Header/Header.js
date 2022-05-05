@@ -73,10 +73,7 @@ const Header = () => {
                 </IconButton> */}
                 <nav className="navbar">
                     <ul className="navbar-nav">
-                        <NavItem icon={<PlusIcon />} />
-                        <NavItem icon={<MessengerIcon />} />
-                        <NavItem icon={<BellIcon />} />
-
+        
                         <NavItem icon={<CaretIcon />}>
                         <DropdownMenu></DropdownMenu>
                         </NavItem>
