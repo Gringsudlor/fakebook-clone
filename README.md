@@ -20,18 +20,5 @@ This is a ReactJs site for learning purpose.
 - Firebase Hosting
 
 
-## Deployment
-This website is deployed on Firebase. [Click here](https://facebook-clone-arif.web.app) to visit.
-<br>
-You can also go direct this link: `https://facebook-clone-arif.web.app`
 
 
-## Screenshots
-#### Login
-![homepage](https://raw.githubusercontent.com/arifpro/react-facebook-clone/master/screenshots/login.png)
-
-#### Home
-![homepage](https://raw.githubusercontent.com/arifpro/react-facebook-clone/master/screenshots/home.png)
-
-#### Menu
-![homepage](https://raw.githubusercontent.com/arifpro/react-facebook-clone/master/screenshots/menu.png)
