@@ -10,35 +10,9 @@ import { actionTypes } from '../../state/reducer'
 import fbLogo from '../../img/fbLogo.webp'
 import fbTextLogo from '../../img/fbTextLogo.svg'
 import { Button } from '@material-ui/core';
+import "firebase/app"
 
 const Login = () => {
-    const [state, dispatch] = useStateValue();
-
-    /*const signIn = () => {
-        // sign in
-        auth.signInWithPopup(provider)
-        .then(result => {
-
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user
-            });
-            console.log(result);
-        })
-        .catch(error => alert(error.message))
-    }*/
-
-    const signIn = () => {
-        //sign in
-        signInWithPopup(auth, provider)
-         .then((result) => {
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user,
-            });
-        })
-        .catch((error) => alert(error.message));
-    };
 
     return (
         <div className="login">
@@ -47,7 +21,7 @@ const Login = () => {
                 <img src={fbTextLogo} alt="facebook"/>
             </div>
 
-            <Button type="submit" onClick={signIn}>Sign In</Button>
+            <Button type="submit" onClick={() => signInWithPopup(auth, provider)}>Sign In</Button>
         </div>
     )
 }
