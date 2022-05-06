@@ -8,6 +8,8 @@ import { useAuth } from "../../state/AuthContext"
 
 import { auth } from "../../firebase"
 
+import './Chats.css';
+
 export default function Chats() {
     const didMountRef = useRef(false)
     const [ loading, setLoading ] = useState(true)
