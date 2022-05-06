@@ -4,8 +4,6 @@ import { CSSTransition } from 'react-transition-group';
 import { ReactComponent as CogIcon } from '../../../img/icons/cog.svg';
 import { ReactComponent as ChevronIcon } from '../../../img/icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../../img/icons/arrow.svg';
-import { Button } from '@material-ui/core';
-import { actionTypes } from '../../../state/reducer'
 
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import HelpIcon from '@material-ui/icons/Help';
@@ -22,14 +20,21 @@ import ReportIcon from '@material-ui/icons/Report';
 
 // context api
 import { useStateValue } from '../../../state/Provider'
-import { auth, provider, signInWithPopup, signOut } from '../../../firebase';
+import { auth } from '../../../firebase';
+import { useHistory } from 'react-router-dom';
 
 const DropdownMenu = () => {
     const [{ user }, dispatch] = useStateValue();
     const [activeMenu, setActiveMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(null);
     const dropdownRef = useRef(null);
-  
+    const history = useHistory()
+    
+    async function handleLogout() {
+        //await auth.signOut()
+        history.push("/")
+      }
+
     useEffect(() => {
         setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
     }, [])
@@ -41,7 +46,7 @@ const DropdownMenu = () => {
   
     function DropdownItem(props) {
         return (
-            <a href="/#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+            <a className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
             <span className="icon-button">{props.leftIcon}</span>
             {props.children}
             <span className="icon-right">{props.rightIcon}</span>
@@ -59,12 +64,6 @@ const DropdownMenu = () => {
             </a>
         );
     }
-
-    const handlerLogout = async () => {
-        await signOut(auth);
-        
-    }
-
   
     return (
       <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
@@ -79,17 +78,11 @@ const DropdownMenu = () => {
             <div className="menu">
                 {/* <DropdownItem>My Profile</DropdownItem> */}
                 <DropdownItemImage image={user.photoURL}>{user.displayName}</DropdownItemImage>
-                
 
-          
-                <DropdownItem leftIcon={<ExitToAppIcon />}>
-                    <Button type="submit" onClick={signOut()}>
-                        
-                    
-                    </Button>Logout</DropdownItem>
-             
-                
-                
+                <div onClick={handleLogout}>
+                <DropdownItem leftIcon={<ExitToAppIcon />}
+                >Log Out</DropdownItem>
+                </div>
 
                 {/* <DropdownItem
                     leftIcon="🦧"

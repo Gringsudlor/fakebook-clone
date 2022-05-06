@@ -25,12 +25,26 @@ import { ReactComponent as PlusIcon } from '../../img/icons/plus.svg';
 
 // image
 import fbLogo from '../../img/fbLogo.webp'
-
+import { useAuth } from '../../state/AuthContext';
+import { auth } from '../../firebase';
+import { useHistory } from 'react-router-dom';
 // context api
 import { useStateValue } from '../../state/Provider'
 
 const Header = () => {
-    const [{ user }, dispatch] = useStateValue();
+    const { user } = useAuth()
+    const history = useHistory()
+
+    async function handleLogout() {
+        //await auth.signOut()
+        history.push("/")
+      }
+
+    async function handleChat() {
+        //await auth.signOut()
+        history.push("/chats")
+      }
+  
 
     return (
         <div className="header">
@@ -73,13 +87,22 @@ const Header = () => {
                 </IconButton> */}
                 <nav className="navbar">
                     <ul className="navbar-nav">
-        
-                        <NavItem icon={<CaretIcon />}>
+                        {/* <NavItem icon={<PlusIcon />} /> */}
+                        <div onClick={handleChat}><NavItem icon={<MessengerIcon />} /></div>
+                        
+                        {/* <NavItem icon={<BellIcon />} /> */}
+                        <div><NavItem icon={<CaretIcon />}>
                         <DropdownMenu></DropdownMenu>
                         </NavItem>
+                        </div>
+                        
                     </ul>
                 </nav>
             </div>
+            {/* <div onClick={handleLogout} className='logout-tab'>
+            Logout
+          </div> */}
+
         </div>
     )
 }

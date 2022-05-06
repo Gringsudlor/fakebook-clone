@@ -8,12 +8,12 @@ import { Videocam, PhotoLibrary, InsertEmoticon} from '@material-ui/icons'
 
 // context api
 import { useStateValue } from '../../../state/Provider'
-
+import { useAuth } from '../../../state/AuthContext';
 // database
 import db from '../../../firebase'
 
 const MessageSender = () => {
-    const [{ user }, dispatch] = useStateValue();
+    const { user } = useAuth()
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState('');
 
@@ -62,7 +62,22 @@ const MessageSender = () => {
                 </form>
             </div>
 
-            
+            <div className="messageSenderBottom">
+                <div className="messageSenderOption">
+                    <Videocam style={{color: 'red'}} />
+                    <h3>Live Video</h3>
+                </div>
+
+                <div className="messageSenderOption">
+                    <PhotoLibrary style={{color: 'green'}} />
+                    <h3>Photo/Video</h3>
+                </div>
+
+                <div className="messageSenderOption">
+                    <InsertEmoticon style={{color: 'orange'}} />
+                    <h3>Feeling/Activity</h3>
+                </div>
+            </div>
         </div>
     )
 }

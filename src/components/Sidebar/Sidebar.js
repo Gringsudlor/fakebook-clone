@@ -6,7 +6,7 @@ import SidebarRow from './SidebarRow/SidebarRow';
 
 // context api
 import { useStateValue } from '../../state/Provider'
-
+import { useAuth } from '../../state/AuthContext';
 // icons
 import {
     LocalHospital,

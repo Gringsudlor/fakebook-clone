@@ -8,7 +8,7 @@ import { Videocam, PhotoLibrary, InsertEmoticon} from '@material-ui/icons'
 
 // context api
 import { useStateValue } from '../../../state/Provider'
-
+import { useAuth } from '../../../state/AuthContext';
 // database
 import db from '../../../firebase'
 

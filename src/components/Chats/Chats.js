@@ -8,8 +8,6 @@ import { useAuth } from "../../state/AuthContext"
 
 import { auth } from "../../firebase"
 
-import './Chats.css';
-
 export default function Chats() {
     const didMountRef = useRef(false)
     const [ loading, setLoading ] = useState(true)
@@ -19,6 +17,10 @@ export default function Chats() {
     async function handleLogout() {
       await auth.signOut()
       history.push("/")
+    }
+
+    async function goHome() {
+      history.push("/home")
     }
   
     async function getFile(url) {
@@ -32,7 +34,7 @@ export default function Chats() {
         didMountRef.current = true
   
         if (!user || user === null) {
-          history.push("/")
+          history.push("/home")
           return
         }
         
@@ -78,7 +80,7 @@ export default function Chats() {
     return (
       <div className='chats-page'>
         <div className='nav-bar'>
-          <div className='logo-tab'>
+          <div onClick={goHome} className='logo-tab'>
             Fakebook
           </div>
   
