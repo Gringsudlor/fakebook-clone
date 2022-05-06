@@ -5,6 +5,7 @@ import { ReactComponent as CogIcon } from '../../../img/icons/cog.svg';
 import { ReactComponent as ChevronIcon } from '../../../img/icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../../img/icons/arrow.svg';
 import { Button } from '@material-ui/core';
+import { actionTypes } from '../../../state/reducer'
 
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import HelpIcon from '@material-ui/icons/Help';
@@ -21,7 +22,7 @@ import ReportIcon from '@material-ui/icons/Report';
 
 // context api
 import { useStateValue } from '../../../state/Provider'
-import { signOut } from 'firebase/auth';
+import { auth, provider, signInWithPopup, signOut } from '../../../firebase';
 
 const DropdownMenu = () => {
     const [{ user }, dispatch] = useStateValue();
@@ -58,6 +59,12 @@ const DropdownMenu = () => {
             </a>
         );
     }
+
+    const handlerLogout = async () => {
+        await signOut(auth);
+        
+    }
+
   
     return (
       <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
@@ -72,10 +79,14 @@ const DropdownMenu = () => {
             <div className="menu">
                 {/* <DropdownItem>My Profile</DropdownItem> */}
                 <DropdownItemImage image={user.photoURL}>{user.displayName}</DropdownItemImage>
+                
 
           
                 <DropdownItem leftIcon={<ExitToAppIcon />}>
-                 <Button type="submit" onClick={signOut}></Button>Logout</DropdownItem>
+                    <Button type="submit" onClick={signOut()}>
+                        
+                    
+                    </Button>Logout</DropdownItem>
              
                 
                 
