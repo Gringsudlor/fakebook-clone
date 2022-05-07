@@ -24,7 +24,7 @@ import { ReactComponent as CaretIcon } from '../../img/icons/caret.svg';
 import { ReactComponent as PlusIcon } from '../../img/icons/plus.svg';
 
 // image
-import fbLogo from '../../img/fbLogo.webp'
+import fbLogo from '../../img/icons/logo.png'
 import { useAuth } from '../../state/AuthContext';
 import { auth } from '../../firebase';
 import { useHistory } from 'react-router-dom';
@@ -52,7 +52,7 @@ const Header = () => {
                 <img src={fbLogo} alt="fbLogo"/>
                 <div className="headerInput">
                     <SearchIcon />
-                    <input type="text" placeholder="Search Facebook" />
+                    <input type="text" placeholder="Search Fakebook" />
                 </div>
             </div>
 

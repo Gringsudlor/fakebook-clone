@@ -11,8 +11,7 @@ import { useAuth } from "../../state/AuthContext"
 
 
 // images and icons
-import fbLogo from '../../img/fbLogo.webp'
-import fbTextLogo from '../../img/fbTextLogo.svg'
+import fbLogo from '../../img/icons/logo.png'
 import { Button } from '@material-ui/core';
 import "firebase/app"
 
@@ -48,8 +47,8 @@ const Login = () => {
     return (
         <div className="login">
             <div className="loginLogo">
-                <img src={fbLogo} alt=""/>
-                <img src={fbTextLogo} alt="facebook"/>
+                <img src={fbLogo} alt="logoIcon"/>
+                <h1 className="fakebook">fakebook</h1>
             </div>
 
             <Button type="submit" onClick={signIn

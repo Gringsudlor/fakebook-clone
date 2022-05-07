@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     position: sticky;
-    background-color: white;
+    background-color: #451684;
     z-index: 100;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 .headerOption:hover {
-    background-color: #eff2f5;
+    background-color: #451699;
     border-radius: 10px;
     border-bottom: none;
 }
@@ -53,13 +53,13 @@
     color: gray;
 }
 .headerOption:hover .MuiSvgIcon-root {
-    color: #2e81f4;
+    color: #ffffff;
 }
 .headerOptionActive {
-    border-bottom: 4px solid #2e81f4;
+    border-bottom: 4px solid #ffffff;
 }
 .headerOptionActive .MuiSvgIcon-root {
-    color: #2e81f4;
+    color: #ffffff;
 }
 
 /* Header Right */
@@ -72,6 +72,7 @@
 }
 .headerInfo h4 {
     margin-left: 10px;
+    color: #eff2f5;
 }
 
 

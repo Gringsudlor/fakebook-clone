@@ -15,7 +15,7 @@ export default function Chats() {
     const history = useHistory()
   
     async function handleLogout() {
-      await auth.signOut()
+      //await auth.signOut()
       history.push("/")
     }
 
@@ -75,7 +75,7 @@ export default function Chats() {
     }, [user, history])
     
   
-    if (!user || loading) return <div />
+    //if (!user || loading) return <div />
   
     return (
       <div className='chats-page'>
